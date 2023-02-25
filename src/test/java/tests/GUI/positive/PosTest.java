@@ -1,4 +1,11 @@
 package tests.GUI.positive;
 
-public class PosTest {
+import baseEntities.BaseTest;
+import org.testng.annotations.Test;
+
+public class PosTest extends BaseTest {
+    @Test
+    public void login(){
+        loginStep.loginSuccessful();
+    }
 }
