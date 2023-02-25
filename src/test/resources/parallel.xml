@@ -3,13 +3,13 @@
 <suite name="Main Suite" parallel="methods" thread-count="4">
     <test name="Smoke">
         <classes>
-            <class name="tests.CalculatorTest"/>
-            <class name="tests.PriorityTest"/>
+            <class name="tests."/>
+            <class name="tests."/>
         </classes>
     </test>
     <test name="Regression">
         <classes>
-            <class name="tests.DependencyTest"/>
+            <class name="tests."/>
         </classes>
     </test>
 </suite>
