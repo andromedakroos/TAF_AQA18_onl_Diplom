@@ -12,6 +12,7 @@ public class LoginPage {
     private By loginButtonLocator = By.id("button_primary");
     private By passwordLengthErrorLocator = By.xpath("//*[text() = 'Field Password is too long (128 characters at most).']");
     private By wrongDataErrorLocator = By.xpath("//*[text() = 'Email/Login or Password is incorrect. Please try again.']");
+    private By tooShortPasswordErrorLocator = By.xpath("//*[text() = 'Password is too short (5 characters required).']");
 
 
 
@@ -22,6 +23,7 @@ public class LoginPage {
         return $(passwordLocator).shouldBe(visible);
     }
     public SelenideElement getLoginButton() {return $(loginButtonLocator).shouldBe(visible);}
-    public SelenideElement getPasswordLengthError() {return $(passwordLengthErrorLocator).shouldBe(visible);}
+    public SelenideElement getLongPasswordError() {return $(passwordLengthErrorLocator).shouldBe(visible);}
     public SelenideElement getWrongDataError() {return $(wrongDataErrorLocator).shouldBe(visible);}
+    public SelenideElement getShortPasswordError(){return $(tooShortPasswordErrorLocator).shouldBe(visible);}
 }

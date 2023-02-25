@@ -17,6 +17,7 @@ public class BaseTest {
     protected User userSuccessful;
     protected User userIncorrect;
     protected User userWithLongPassword;
+    protected User userWithShortPassword;
     @BeforeSuite
     public void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
@@ -27,16 +28,20 @@ public class BaseTest {
         Configuration.fastSetValue = true;
         loginStep = new LoginStep();
         userSuccessful = User.builder()
-                .name("annaavinova@gmail.com")
-                .password("Qwertyu_1")
+                .name(ReadProperties.username())
+                .password(ReadProperties.password())
                 .build();
         userIncorrect = User.builder()
                 .name("andrewmrz@gmail.com")
                 .password("Qwerty_123456789")
                 .build();
         userWithLongPassword = User.builder()
-                .name("annaavinova@gmail.com")
-                .password("paaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssswooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooord")
+                .name(ReadProperties.username())
+                .password(ReadProperties.longPassword())
+                .build();
+        userWithShortPassword = User.builder()
+                .name(ReadProperties.username())
+                .password(ReadProperties.shortPassword())
                 .build();
         open("");
     }

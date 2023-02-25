@@ -4,9 +4,12 @@ import baseEntities.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+
 public class InputIncorrectDataTest extends BaseTest {
     @Test
     public void InputIncorrectDataTest(){
-        Assert.assertTrue(loginStep.loginIncorrect(userIncorrect));
+      loginStep.loginIncorrect(userIncorrect).shouldHave(text("Email/Login or Password is incorrect. Please try again."));
     }
 }
