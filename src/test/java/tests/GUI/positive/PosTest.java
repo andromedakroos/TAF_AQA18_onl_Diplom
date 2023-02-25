@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class PosTest extends BaseTest {
     @Test
-    public void login(){
-        loginStep.loginSuccessful();
+    public void loginTest(){
+        loginStep.loginSuccessful(userSuccessful);
     }
 }
