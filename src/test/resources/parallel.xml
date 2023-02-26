@@ -6,15 +6,5 @@
             <package name="tests.GUI.negative"/>
             <package name="tests.GUI.positive"/>
         </packages>
-<!--        <classes>-->
-<!--            <class name="tests.GUI.negative.InputDataThatExceedsTheAllowableLimitsTest"/>-->
-<!--            <class name="tests.GUI.negative.InputIncorrectDataTest"/>-->
-<!--        </classes>-->
     </test>
-<!--    <test name="Regression">-->
-<!--        <classes>-->
-<!--            <class name="tests.GUI.positive.CheckInputFieldForBoundaryValuesTest"/>-->
-<!--            <class name="tests.GUI.positive.PosTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>

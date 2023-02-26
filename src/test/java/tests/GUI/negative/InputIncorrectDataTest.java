@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.open;
 public class InputIncorrectDataTest extends BaseTest {
     @Test(description = "Тест на использование некорректных данных")
     public void InputIncorrectDataTest() {
-        open(ReadProperties.getUrl());
         loginStep.loginIncorrect(userIncorrect).shouldHave(text("Email/Login or Password is incorrect. Please try again."));
     }
 }

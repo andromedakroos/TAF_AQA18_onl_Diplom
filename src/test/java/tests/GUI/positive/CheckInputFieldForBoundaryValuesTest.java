@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selenide.open;
 public class CheckInputFieldForBoundaryValuesTest extends BaseTest {
     @Test(description = "Тест на граничные значения")
     public void checkInputFieldForBoundaryValuesTest(){
-        open(ReadProperties.getUrl());
         loginStep.loginWithShortPassword(userWithShortPassword).shouldHave(text("Password is too short (5 characters required)."));
         loginStep.clearPasswordField();
         loginStep.loginWithLongPassword(userWithLongPassword).shouldHave(text("Field Password is too long (128 characters at most)."));
@@ -21,7 +20,6 @@ public class CheckInputFieldForBoundaryValuesTest extends BaseTest {
 
     @Test
     public void loginTest(){
-        open(ReadProperties.getUrl());
         loginStep.loginSuccessful(userSuccessful);
     }
 }

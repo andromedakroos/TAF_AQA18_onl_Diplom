@@ -21,7 +21,7 @@ public class BaseTest {
     protected User userWithLongPassword;
     protected User userWithShortPassword;
 
-    @BeforeSuite
+    @BeforeMethod
     public void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browser = ReadProperties.browserName();
@@ -45,7 +45,7 @@ public class BaseTest {
                 .name(ReadProperties.username())
                 .password(ReadProperties.shortPassword())
                 .build();
-//        open("");
+        open("");
     }
     @AfterMethod
     public void tearDown() {
