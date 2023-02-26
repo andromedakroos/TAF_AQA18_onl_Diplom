@@ -12,8 +12,8 @@ import org.testng.annotations.Listeners;
 import steps.LoginStep;
 import utils.InvokedListener;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+
 @Listeners(InvokedListener.class)
 public class BaseTest {
     protected LoginStep loginStep;
@@ -24,7 +24,7 @@ public class BaseTest {
     @BeforeSuite
     public void setUp(ITestContext iTestContext) {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        iTestContext.setAttribute("driver", driver);
+        iTestContext.setAttribute("driver", webdriver());
         Configuration.browser = ReadProperties.browserName();
         Configuration.baseUrl = ReadProperties.getUrl();
         Configuration.timeout = 15000;
