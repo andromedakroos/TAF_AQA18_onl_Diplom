@@ -11,5 +11,6 @@ public class CheckInputFieldForBoundaryValuesTest extends BaseTest {
         loginStep.loginWithLongPassword(userWithLongPassword);
         loginStep.clearPasswordField();
         loginStep.loginSuccessful(userSuccessful);
+        //проверка что открылся дашборд
     }
 }
