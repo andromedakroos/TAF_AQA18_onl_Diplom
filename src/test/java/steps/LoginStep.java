@@ -7,6 +7,8 @@ import configuration.ReadProperties;
 import models.User;
 import pages.LoginPage;
 
+import static com.codeborne.selenide.Condition.visible;
+
 public class LoginStep extends BaseStep {
     public void clearPasswordField(){
         loginPage.getPasswordInput().clear();
