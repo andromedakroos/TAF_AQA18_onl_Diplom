@@ -8,10 +8,6 @@ import models.User;
 import pages.LoginPage;
 
 public class LoginStep extends BaseStep {
-
-    public LoginStep(){
-        loginPage = new LoginPage();
-    }
     public void clearPasswordField(){
         loginPage.getPasswordInput().clear();
     }
