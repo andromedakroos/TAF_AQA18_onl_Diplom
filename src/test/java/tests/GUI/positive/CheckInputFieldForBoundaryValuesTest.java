@@ -1,9 +1,11 @@
 package tests.GUI.positive;
 
 import baseEntities.BaseTest;
+import configuration.ReadProperties;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.open;
 
 public class CheckInputFieldForBoundaryValuesTest extends BaseTest {
     @Test(description = "Тест на граничные значения")
@@ -14,5 +16,10 @@ public class CheckInputFieldForBoundaryValuesTest extends BaseTest {
         loginStep.clearPasswordField();
         loginStep.loginSuccessful(userSuccessful);
         //проверка что открылся дашборд
+    }
+
+    @Test
+    public void loginTest(){
+        loginStep.loginSuccessful(userSuccessful);
     }
 }

@@ -6,7 +6,9 @@ import configuration.ReadProperties;
 import io.qameta.allure.selenide.AllureSelenide;
 import models.User;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import steps.LoginStep;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
@@ -18,10 +20,10 @@ public class BaseTest {
     protected User userIncorrect;
     protected User userWithLongPassword;
     protected User userWithShortPassword;
-    @BeforeSuite
+
+    @BeforeMethod
     public void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
         Configuration.browser = ReadProperties.browserName();
         Configuration.baseUrl = ReadProperties.getUrl();
         Configuration.timeout = 15000;
