@@ -15,7 +15,6 @@ public class CheckInputFieldForBoundaryValuesTest extends BaseTest {
         loginStep.loginWithLongPassword(userWithLongPassword).shouldHave(text("Field Password is too long (128 characters at most)."));
         loginStep.clearPasswordField();
         loginStep.loginSuccessful(userSuccessful);
-        //проверка что открылся дашборд
     }
 
     @Test
