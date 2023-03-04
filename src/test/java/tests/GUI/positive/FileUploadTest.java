@@ -15,6 +15,5 @@ public class FileUploadTest extends BaseTest {
         dashboardStep.goToProject();
 //        projectStep.goToTestCases();
         projectStep.uploadFile(pathToFile);
-
     }
 }

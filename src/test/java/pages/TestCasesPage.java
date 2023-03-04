@@ -10,8 +10,9 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class TestCasesPage {
     private By attachFileButtonLocator = By.id("entityAttachmentListEmptyIcon");
-    private By openLibraryButtonLocator = By.id("libraryAddAttachment");
-    private By submitAttachButtonLocator = By.id("attachmentNewSubmit");
+//    private By openLibraryButtonLocator = By.className("dz-hidden-input"); работающий вариант
+private By openLibraryButtonLocator = By.id("libraryAddAttachment");
+    private By submitAttachButtonLocator = By.className("addAttachment");
     private By imageSubmitButtonLocator = By.className("attachment-selection");
     private By attachmentNameLocator = By.xpath("//*[@title ='testcaselogo.png'");
 

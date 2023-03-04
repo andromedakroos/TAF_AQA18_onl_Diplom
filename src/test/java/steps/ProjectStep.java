@@ -34,11 +34,12 @@ public class ProjectStep extends BaseStep {
     public void uploadFile(String pathToFile) throws InterruptedException {
         projectPage.getAddTestCaseButton().click();
         testCasesPage.getAttachFileButton().click();
-        testCasesPage.getOpenLibraryButton().click();
 //        testCasesPage.getOpenLibraryButton().uploadFile(new File(pathToFile));
         testCasesPage.getOpenLibraryButton().sendKeys(pathToFile);
-//        testCasesPage.getImageSubmitButton().click();
-        testCasesPage.getSubmitAttachButton().submit();
+        testCasesPage.getImageSubmitButton().click();
+        testCasesPage.getSubmitAttachButton().click();
+        testCasesPage.getSubmitAttachButton().click();
+        Thread.sleep(15000);
 //        System.out.println(testCasesPage.getAttachmentName().getText());
     }
 
