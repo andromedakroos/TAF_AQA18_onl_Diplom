@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
@@ -21,7 +22,7 @@ public class TestCasesPage {
         return $(attachFileButtonLocator).shouldBe(visible);
     }
     public SelenideElement getOpenLibraryButton(){
-        return $(openLibraryButtonLocator).shouldBe(visible);
+        return $(openLibraryButtonLocator).should(exist);
     }
     public SelenideElement getAttachmentName(){
         return $(attachmentNameLocator).shouldBe(visible);

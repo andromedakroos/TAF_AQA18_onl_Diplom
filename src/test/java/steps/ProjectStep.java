@@ -31,15 +31,12 @@ public class ProjectStep extends BaseStep {
         projectPage.getTestCasesSection().click();
     }
     @Step
-    public void uploadFile() throws InterruptedException {
-        String pathToFile = ProjectStep.class.getClassLoader().getResource("testcaselogo.png").getPath().substring(1);
-        System.out.println(pathToFile);
+    public void uploadFile(String pathToFile) throws InterruptedException {
         projectPage.getAddTestCaseButton().click();
         testCasesPage.getAttachFileButton().click();
+        testCasesPage.getOpenLibraryButton().click();
 //        testCasesPage.getOpenLibraryButton().uploadFile(new File(pathToFile));
-//        testCasesPage.getOpenLibraryButton().click();
         testCasesPage.getOpenLibraryButton().sendKeys(pathToFile);
-        Thread.sleep(2000);
 //        testCasesPage.getImageSubmitButton().click();
         testCasesPage.getSubmitAttachButton().submit();
 //        System.out.println(testCasesPage.getAttachmentName().getText());
@@ -54,13 +51,13 @@ public class ProjectStep extends BaseStep {
         $(By.className("icon-markdown-image")).click();
         Thread.sleep(2000);
 //        $(By.id("libraryAddAttachment")).sendKeys(pathToFile);
-        $(By.id("libraryAddAttachment")).uploadFile(new File(pathToFile));
+        $(By.id("libraryAddAttachment")).setValue(pathToFile);
 //        testCasesPage.getOpenLibraryButton().uploadFile(new File(pathToFile));
 //        testCasesPage.getOpenLibraryButton().click();
 //        testCasesPage.getOpenLibraryButton().sendKeys(pathToFile);
         Thread.sleep(2000);
 //        testCasesPage.getImageSubmitButton().click();
-//        testCasesPage.getSubmitAttachButton().submit();
+        testCasesPage.getSubmitAttachButton().submit();
 //        System.out.println(testCasesPage.getAttachmentName().getText());
     }
 
