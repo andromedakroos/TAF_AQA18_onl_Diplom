@@ -20,7 +20,7 @@ public class MilestoneAdapter {
                 .then()
                 .log().body()
                 .extract()
-                .as(Milestone.class, ObjectMapperType.GSON);
+                .as(Milestone.class);
     }
 
     public Response delete(int milestoneID) {
@@ -41,7 +41,7 @@ public class MilestoneAdapter {
                 .then()
                 .log().body()
                 .extract()
-                .as(Milestone.class, ObjectMapperType.GSON);
+                .as(Milestone.class);
     }
         public Milestone getAll(int projectID) {
         return given()
@@ -51,7 +51,7 @@ public class MilestoneAdapter {
                 .then()
                 .log().body()
                 .extract()
-                .as(Milestone.class, ObjectMapperType.GSON);
+                .as(Milestone.class);
     }
 
     public Milestone update(File file, int milestoneID) {

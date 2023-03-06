@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class NFETest extends BaseApiTest {
     private int milestoneID;
 
-    @Test
+    @Test(priority = 2)
     public void addMilestoneTest() {
         milestoneID = milestoneAdapter.add(pathForMilestone, projectID).getId();
     }
@@ -19,7 +19,7 @@ public class NFETest extends BaseApiTest {
         Assert.assertEquals(milestoneAdapter.getOne(milestoneID).getId(), milestoneID);
     }
 
-    @Test
+    @Test(priority = 1)
     public void getAllMilestones() {
         milestoneAdapter.add(pathForMilestone, projectID);
         milestoneAdapter.add(pathForMilestone, projectID);

@@ -1,6 +1,5 @@
 package adapters;
 
-import io.restassured.mapper.ObjectMapperType;
 import models.Project;
 import org.apache.http.HttpStatus;
 import utils.Endpoints;
@@ -21,7 +20,7 @@ public class ProjectAdapter {
                 .log().body()
                 .statusCode(HttpStatus.SC_OK)
                 .extract()
-                .as(Project.class, ObjectMapperType.GSON);
+                .as(Project.class);
     }
 
     public void delete(int projectID) {
@@ -41,6 +40,6 @@ public class ProjectAdapter {
                 .then()
                 .log().body()
                 .extract()
-                .as(Project.class, ObjectMapperType.GSON);
+                .as(Project.class);
     }
 }
