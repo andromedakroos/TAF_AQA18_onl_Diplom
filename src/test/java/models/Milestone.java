@@ -10,12 +10,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Project {
+public class Milestone {
     private String name;
-    private String announcement;
-    private  int type;
-    private boolean showAnnouncement;
-    private boolean deleted;
+    private String description;
     private int id;
+    private boolean is_completed;
+    private int size;
     private String error;
 }
