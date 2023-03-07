@@ -43,7 +43,7 @@ public class MilestoneAdapter {
                 .extract()
                 .as(Milestone.class);
     }
-        public Milestone getAll(int projectID) {
+    public Milestone getAll(int projectID) {
         return given()
                 .pathParam("project_id", projectID)
                 .when()

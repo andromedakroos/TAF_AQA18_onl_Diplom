@@ -14,32 +14,32 @@ public class AFETest extends BaseApiTest {
     }
 
     @Test
-    public void getOneNotValidIDMilestone() {
+    public void getOneNotValidIDMilestoneTest() {
         Assert.assertEquals(milestoneAdapter.getOne(0).getError(),
                 "Field :milestone_id is not a valid milestone.");
     }
 
     @Test
-    public void getAllNotValidIDMilestones() {
+    public void getAllNotValidIDMilestonesTest() {
         Assert.assertEquals(milestoneAdapter.getAll(0).getError(),
                 "Field :project_id is not a valid or accessible project.");
     }
 
     @Test
-    public void updateMilestoneWithNotValidID() {
+    public void updateMilestoneWithNotValidIDTest() {
         Assert.assertEquals(milestoneAdapter
                 .update(pathForUpdateMilestone, 0).getError(),
                 "Field :milestone_id is not a valid milestone.");
     }
 
     @Test
-    public void getProjectWithNotValidID() {
+    public void getProjectWithNotValidIDTest() {
         Assert.assertEquals(projectAdapter.get(0).getError(),
                 "Field :project_id is not a valid or accessible project.");
     }
 
     @Test
-    public void deleteMilestoneWithNotValidID() {
+    public void deleteMilestoneWithNotValidIDTest() {
         Assert.assertEquals(milestoneAdapter.delete(0).getStatusCode(),
                 HttpStatus.SC_BAD_REQUEST);
     }

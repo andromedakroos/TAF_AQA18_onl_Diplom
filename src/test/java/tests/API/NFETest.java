@@ -15,24 +15,24 @@ public class NFETest extends BaseApiTest {
     }
 
     @Test(dependsOnMethods = "addMilestoneTest")
-    public void getOneMilestone() {
+    public void getOneMilestoneTest() {
         Assert.assertEquals(milestoneAdapter.getOne(milestoneID).getId(), milestoneID);
     }
 
     @Test(priority = 1)
-    public void getAllMilestones() {
+    public void getAllMilestonesTest() {
         milestoneAdapter.add(pathForMilestone, projectID);
         Assert.assertEquals(milestoneAdapter.getAll(projectID).getSize(), 1);
     }
 
     @Test(dependsOnMethods = "addMilestoneTest")
-    public void updateMilestone() {
+    public void updateMilestoneTest() {
         Assert.assertTrue(milestoneAdapter
                 .update(pathForUpdateMilestone, milestoneID).is_completed());
     }
 
     @Test
-    public void getProject() {
+    public void getProjectTest() {
         Assert.assertEquals(projectAdapter.get(projectID).getId(), projectID);
     }
 
