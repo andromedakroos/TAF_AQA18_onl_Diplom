@@ -23,7 +23,7 @@ public class BaseApiTest {
     protected Project projectApi;
     protected int projectID;
 
-    @BeforeTest
+    @BeforeMethod
     public void setupApi() {
         RestAssured.baseURI = ReadProperties.getUrl();
 
