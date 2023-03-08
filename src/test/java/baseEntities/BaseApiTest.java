@@ -23,7 +23,7 @@ public class BaseApiTest {
     protected Project projectApi;
     protected int projectID;
 
-    @BeforeMethod
+    @BeforeClass
     public void setupApi() {
         RestAssured.baseURI = ReadProperties.getUrl();
 
@@ -44,7 +44,7 @@ public class BaseApiTest {
         projectID = projectApi.getId();
     }
 
-    @AfterSuite
+    @AfterClass
     public void tearDown() {
         if (projectID > 0) {
             projectAdapter.delete(projectID);

@@ -3,7 +3,6 @@ package tests.API;
 import baseEntities.BaseApiTest;
 import org.apache.http.HttpStatus;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class NFETest extends BaseApiTest {
@@ -36,8 +35,8 @@ public class NFETest extends BaseApiTest {
         Assert.assertEquals(projectAdapter.get(projectID).getId(), projectID);
     }
 
-    @AfterTest
-    public void deleteMilestone() {
+    @Test
+    public void deleteMilestoneTest() {
         if (milestoneID > 0) {
             Assert.assertEquals(milestoneAdapter.delete(milestoneID).getStatusCode(),
                     HttpStatus.SC_OK);
