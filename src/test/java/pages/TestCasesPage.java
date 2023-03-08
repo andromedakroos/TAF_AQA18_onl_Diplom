@@ -10,25 +10,22 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class TestCasesPage {
     private By attachFileButtonLocator = By.id("entityAttachmentListEmptyIcon");
-//    private By openLibraryButtonLocator = By.className("dz-hidden-input"); работающий вариант
-private By openLibraryButtonLocator = By.id("libraryAddAttachment");
+    private By openLibraryButtonLocator = By.cssSelector("input[type='file']");
     private By submitAttachButtonLocator = By.className("addAttachment");
-    private By imageSubmitButtonLocator = By.className("attachment-selection");
-    private By attachmentNameLocator = By.xpath("//*[@title ='testcaselogo.png'");
+    private By attachmentNameLocator = By.xpath("//*[starts-with(@title, 'testcaselogo')]");
+    private By titleInputLocator = By.id("title");
+    private By addTestCaseButtonLocator = By.id("accept");
 
-    public SelenideElement getSubmitAttachButton(){
-        return $(submitAttachButtonLocator).shouldBe(visible);
-    }
-    public SelenideElement getAttachFileButton(){
-        return $(attachFileButtonLocator).shouldBe(visible);
-    }
     public SelenideElement getOpenLibraryButton(){
         return $(openLibraryButtonLocator).should(exist);
     }
     public SelenideElement getAttachmentName(){
         return $(attachmentNameLocator).shouldBe(visible);
     }
-    public SelenideElement getImageSubmitButton(){
-        return $(imageSubmitButtonLocator).should(exist);
+    public SelenideElement getTitleInput(){
+        return $(titleInputLocator).shouldBe(visible);
+    }
+    public SelenideElement getAddTestCaseButton(){
+        return $(addTestCaseButtonLocator).shouldBe(visible);
     }
 }

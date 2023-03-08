@@ -1,13 +1,19 @@
 package steps;
 
 import baseEntities.BaseStep;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import models.Project;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import tests.GUI.positive.FileUploadTest;
 
 import java.io.File;
+import java.util.Arrays;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.webdriver;
 
 public class ProjectStep extends BaseStep {
     @Step
@@ -31,39 +37,15 @@ public class ProjectStep extends BaseStep {
         projectPage.getTestCasesSection().click();
     }
     @Step
-    public void uploadFile(String pathToFile) throws InterruptedException {
+    public String uploadFile() {
+        String pathToFile = FileUploadTest.class.getClassLoader().getResource("testcaselogo.png").getPath().substring(1);
         projectPage.getAddTestCaseButton().click();
-        testCasesPage.getAttachFileButton().click();
-//        testCasesPage.getOpenLibraryButton().uploadFile(new File(pathToFile));
-        testCasesPage.getOpenLibraryButton().sendKeys(pathToFile);
-        testCasesPage.getImageSubmitButton().click();
-        testCasesPage.getSubmitAttachButton().click();
-        testCasesPage.getSubmitAttachButton().click();
-        Thread.sleep(15000);
-//        System.out.println(testCasesPage.getAttachmentName().getText());
-    }
-
-    @Step
-    public void uploadFileMilestone() throws InterruptedException {
-        String pathToFile = ProjectStep.class.getClassLoader().getResource("testcaselogo.png").getPath().substring(1);
-        System.out.println(pathToFile);
-        projectPage.getMilestoneSection().click();
-        $(By.id("navigation-milestones-add")).click();
-        $(By.className("icon-markdown-image")).click();
-        Thread.sleep(2000);
-//        $(By.id("libraryAddAttachment")).sendKeys(pathToFile);
-        $(By.id("libraryAddAttachment")).setValue(pathToFile);
-//        testCasesPage.getOpenLibraryButton().uploadFile(new File(pathToFile));
-//        testCasesPage.getOpenLibraryButton().click();
-//        testCasesPage.getOpenLibraryButton().sendKeys(pathToFile);
-        Thread.sleep(2000);
-//        testCasesPage.getImageSubmitButton().click();
-        testCasesPage.getSubmitAttachButton().submit();
-//        System.out.println(testCasesPage.getAttachmentName().getText());
-    }
-
-    @Step
-    public void createTestCase(){
-
+        testCasesPage.getOpenLibraryButton().uploadFile(new File(pathToFile));
+        testCasesPage.getTitleInput().setValue("Verify that file upload works correctly");
+        testCasesPage.getAttachmentName();
+        testCasesPage.getAddTestCaseButton().submit();
+        byte[] bytes = testCasesPage.getAttachmentName().getAttribute("title").getBytes();
+        String string = new String(bytes);
+        return string;
     }
 }
