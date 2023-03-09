@@ -18,8 +18,5 @@ public class DashboardStep extends BaseStep {
     public SelenideElement hoverToResetButton() {
         dashboardPage.getResetButton().hover();
         return dashboardPage.getTooltip();
-//        String string = dashboardPage.getTooltip().getText();
-//        System.out.println(string);
-//        return string;
     }
 }
