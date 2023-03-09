@@ -17,14 +17,14 @@ import static com.codeborne.selenide.Selenide.webdriver;
 
 public class ProjectStep extends BaseStep {
     @Step
-    public void createProject(Project project){
+    public SelenideElement createProject(Project project){
         logger.info("In step createProject Project object is using, wich contains fields: " + project);
         addProjectPage.getProjectNameInput().setValue(project.getName());
         addProjectPage.getProjectAnnouncementInput().setValue(project.getAnnouncement());
         addProjectPage.getShowAnnouncementCheckbox().click();
         addProjectPage.getSingleSuiteButton().click();
         addProjectPage.getAddProjectButton().click();
-        projectOverviewPage.getSuccessfulMessage();
+       return projectOverviewPage.getSuccessfulMessage();
     }
     @Step
     public void goBackToDashboard(){
@@ -56,5 +56,14 @@ public class ProjectStep extends BaseStep {
         testCasesPage.getAddTableButton().click();
         testCasesPage.getSubmitTableButton().click();
         return testCasesPage.getPreconditionInput();
+    }
+
+    @Step
+    public SelenideElement deleteProject() {
+//        dashboardPage.getAdministrationButton().click();
+        projectOverviewPage.getDeleteButton().click();
+        projectOverviewPage.getCheckbox().click();
+        projectOverviewPage.getOKButton().click();
+        return projectOverviewPage.getSuccessfulMessage();
     }
 }

@@ -1,4 +1,4 @@
-package tests.GUI.positive;
+package tests.GUI.negative;
 
 import baseEntities.BaseTest;
 import org.testng.annotations.Test;
