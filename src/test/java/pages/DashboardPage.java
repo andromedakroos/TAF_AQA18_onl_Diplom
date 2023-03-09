@@ -10,6 +10,8 @@ public class DashboardPage{
     private By addProjectButtonLocator = By.id("sidebar-projects-add");
     private By projectNameLocator = By.xpath("//*[text() = 'TestProject']");
     private By administrationButtonLocator = By.id("navigation-admin");
+    private By resetButtonLocator = By.id("clickToReset");
+    private By tooltipLocator = By.id("tooltip");
     public SelenideElement getAddProjectButton(){
         return $(addProjectButtonLocator).shouldBe(visible);
     }
@@ -20,5 +22,11 @@ public class DashboardPage{
 
     public SelenideElement getAdministrationButton(){
         return $(administrationButtonLocator).shouldBe(visible);
+    }
+    public SelenideElement getResetButton(){
+        return $(resetButtonLocator).shouldBe(visible);
+    }
+    public SelenideElement getTooltip(){
+        return $(tooltipLocator).shouldBe(visible);
     }
 }

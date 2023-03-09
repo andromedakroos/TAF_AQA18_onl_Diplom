@@ -9,12 +9,13 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TestCasesPage {
-    private By attachFileButtonLocator = By.id("entityAttachmentListEmptyIcon");
     private By openLibraryButtonLocator = By.cssSelector("input[type='file']");
-    private By submitAttachButtonLocator = By.className("addAttachment");
     private By attachmentNameLocator = By.xpath("//*[starts-with(@title, 'testcaselogo')]");
     private By titleInputLocator = By.id("title");
     private By addTestCaseButtonLocator = By.id("accept");
+    private By addTableButtonLocator = By.className("icon-markdown-table");
+    private By submitTableButtonLocator = By.id("addTableSubmit");
+    private By preconditionInputLocator = By.id("custom_preconds_display");
 
     public SelenideElement getOpenLibraryButton(){
         return $(openLibraryButtonLocator).should(exist);
@@ -27,5 +28,14 @@ public class TestCasesPage {
     }
     public SelenideElement getAddTestCaseButton(){
         return $(addTestCaseButtonLocator).shouldBe(visible);
+    }
+    public SelenideElement getAddTableButton(){
+        return $(addTableButtonLocator).shouldBe(visible);
+    }
+    public SelenideElement getSubmitTableButton(){
+        return $(submitTableButtonLocator).shouldBe(visible);
+    }
+    public SelenideElement getPreconditionInput(){
+        return $(preconditionInputLocator).shouldBe(visible);
     }
 }

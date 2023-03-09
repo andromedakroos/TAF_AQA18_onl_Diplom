@@ -46,6 +46,15 @@ public class ProjectStep extends BaseStep {
         testCasesPage.getAddTestCaseButton().submit();
         byte[] bytes = testCasesPage.getAttachmentName().getAttribute("title").getBytes();
         String string = new String(bytes);
+        System.out.println(string);
         return string;
+    }
+    @Step
+    public SelenideElement addTable(){
+        projectPage.getAddTestCaseButton().click();
+        testCasesPage.getTitleInput().setValue("Verify that file upload works correctly");
+        testCasesPage.getAddTableButton().click();
+        testCasesPage.getSubmitTableButton().click();
+        return testCasesPage.getPreconditionInput();
     }
 }
