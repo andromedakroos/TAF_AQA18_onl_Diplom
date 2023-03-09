@@ -3,10 +3,12 @@ package steps;
 import baseEntities.BaseStep;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.netty.channel.SelectStrategy;
 import io.qameta.allure.Step;
 import models.Project;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import tests.GUI.positive.FileUploadTest;
 
 import java.io.File;
@@ -59,10 +61,12 @@ public class ProjectStep extends BaseStep {
     }
 
     @Step
-    public SelenideElement deleteProject() {
-//        dashboardPage.getAdministrationButton().click();
+    public SelenideElement deleteProject() throws InterruptedException {
         projectOverviewPage.getDeleteButton().click();
+//        $(By.id("dialog-ident-deleteDialog")).sendKeys(Keys.SPACE);
+//        Selenide.executeJavaScript("arguments[0].removeAttribute('style')", $(By.className("dialog-confirm-busy")));
         projectOverviewPage.getCheckbox().click();
+        Thread.sleep(15000);
         projectOverviewPage.getOKButton().click();
         return projectOverviewPage.getSuccessfulMessage();
     }

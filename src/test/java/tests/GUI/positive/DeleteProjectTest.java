@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 
 public class DeleteProjectTest extends BaseTest {
     @Test(description = "Тест на удаление сущности (проекта)")
-    public void deleteProjectTest(){
+    public void deleteProjectTest() throws InterruptedException {
         loginStep.loginSuccessful(userSuccessful);
         dashboardStep.goToProjectCreation();
         projectStep.createProject(project);
