@@ -14,8 +14,7 @@ import tests.GUI.positive.FileUploadTest;
 import java.io.File;
 import java.util.Arrays;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ProjectStep extends BaseStep {
     @Step
@@ -61,12 +60,13 @@ public class ProjectStep extends BaseStep {
     }
 
     @Step
-    public SelenideElement deleteProject() throws InterruptedException {
+    public SelenideElement deleteProject(){
         projectOverviewPage.getDeleteButton().click();
-//        $(By.id("dialog-ident-deleteDialog")).sendKeys(Keys.SPACE);
+//        $(By.xpath("/html/body/div[34]/div[1]/a")).click();
 //        Selenide.executeJavaScript("arguments[0].removeAttribute('style')", $(By.className("dialog-confirm-busy")));
+
         projectOverviewPage.getCheckbox().click();
-        Thread.sleep(15000);
+//        projectOverviewPage.getCheckbox().sendKeys(Keys.SPACE);
         projectOverviewPage.getOKButton().click();
         return projectOverviewPage.getSuccessfulMessage();
     }
