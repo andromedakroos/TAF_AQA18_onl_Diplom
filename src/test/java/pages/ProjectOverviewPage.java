@@ -10,12 +10,9 @@ import static com.codeborne.selenide.Selenide.$;
 public class ProjectOverviewPage {
     private By successfulMessageLocator = By.className("message-success");
     private By dashboardButtonLocator = By.id("navigation-dashboard");
-//    private By projectNameLocator = By.xpath("//a[text() = 'TestProject']/ancestor::tr//a[@href = 'javascript:void(0)']");
     private By deleteButtonLocator = By.xpath("//a[text() = 'TestProject']/ancestor::tr//div[@class = 'icon-small-delete']");
-    private By checkBoxLocator = By.xpath("//input[@type ='checkbox']");
-//    private By checkBoxLocator = By.id("deleteDialog");
-//    private By checkBoxLocator = By.className("checkbox");
-    private By OKButtonLocator = By.xpath("//a[text() = 'OK']");
+    private By checkBoxLocator = By.xpath("//div[@role = 'dialog']//input");
+    private By OKButtonLocator = By.xpath("//div[@id ='deleteDialog']//a[contains(text(),'OK')]");
     public SelenideElement getSuccessfulMessage(){
         return $(successfulMessageLocator).shouldBe(visible);
     }

@@ -62,11 +62,7 @@ public class ProjectStep extends BaseStep {
     @Step
     public SelenideElement deleteProject(){
         projectOverviewPage.getDeleteButton().click();
-//        $(By.xpath("/html/body/div[34]/div[1]/a")).click();
-//        Selenide.executeJavaScript("arguments[0].removeAttribute('style')", $(By.className("dialog-confirm-busy")));
-
         projectOverviewPage.getCheckbox().click();
-//        projectOverviewPage.getCheckbox().sendKeys(Keys.SPACE);
         projectOverviewPage.getOKButton().click();
         return projectOverviewPage.getSuccessfulMessage();
     }
