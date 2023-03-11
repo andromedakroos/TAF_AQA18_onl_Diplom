@@ -16,9 +16,4 @@ public class CheckInputFieldForBoundaryValuesTest extends BaseTest {
         loginStep.clearPasswordField();
         loginStep.loginSuccessful(userSuccessful);
     }
-
-    @Test
-    public void loginTest(){
-        loginStep.loginSuccessful(userSuccessful);
-    }
 }

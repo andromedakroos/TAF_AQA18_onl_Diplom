@@ -16,7 +16,7 @@ public class LoginStep extends BaseStep {
     }
     @Step
     public void loginSuccessful(User user){
-        logger.info("In step loginSuccesful object User is using, wich contains fields: " + user);
+        logger.info("In step loginSuccessful object User is using, which contains fields: " + user);
         loginPage.getUsernameInput().setValue(user.getName());
         loginPage.getPasswordInput().setValue(user.getPassword());
         loginPage.getLoginButton().click();
@@ -24,7 +24,7 @@ public class LoginStep extends BaseStep {
     }
     @Step
     public SelenideElement loginIncorrect(User user){
-        logger.info("In step loginIncorrect object User is using, wich contains fields: " + user);
+        logger.info("In step loginIncorrect object User is using, which contains fields: " + user);
         loginPage.getUsernameInput().setValue(user.getName());
         loginPage.getPasswordInput().setValue(user.getPassword());
         loginPage.getLoginButton().click();
@@ -32,7 +32,7 @@ public class LoginStep extends BaseStep {
     }
     @Step
     public SelenideElement loginWithLongPassword(User user){
-        logger.info("In step loginWithLongPassword object User is using, wich contains fields: " + user);
+        logger.info("In step loginWithLongPassword object User is using, which contains fields: " + user);
         loginPage.getUsernameInput().setValue(user.getName());
         loginPage.getPasswordInput().setValue(user.getPassword());
         loginPage.getLoginButton().click();
@@ -40,7 +40,7 @@ public class LoginStep extends BaseStep {
     }
     @Step
     public SelenideElement loginWithShortPassword(User user){
-        logger.info("In step loginWithShortPassword object User is using, wich contains fields: " + user);
+        logger.info("In step loginWithShortPassword object User is using, which contains fields: " + user);
         loginPage.getUsernameInput().setValue(user.getName());
         loginPage.getPasswordInput().setValue(user.getPassword());
         loginPage.getLoginButton().click();
